@@ -14,6 +14,7 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	
+	<!-- jahia 사용  -->
 	<repositories>
 		<repository>
 			<id>oracle</id>

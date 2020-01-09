@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -16,6 +17,7 @@ public class NoteDao {
 
 	//servlet-context 에서 자동 생성하여 Spring 에는 주입(inject) 했다고 본다.
 	private JdbcTemplate template;
+	
 	
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
