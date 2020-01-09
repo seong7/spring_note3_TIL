@@ -24,5 +24,20 @@
 	<context:component-scan base-package="com.bit.springNote3" />
 	
 	
+	<!-- 사용할 xml 파일들의 위치 mapping -->
+	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<beans:property name="username" value="system"/>
+		<beans:property name="password" value="1234"/>
+	</beans:bean>
+	
+ 	<beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource"/>
+	</beans:bean>
+	
+	<beans:bean name="dao" class="com.bit.springNote3.dao.NoteDao">
+		<beans:property name="template" ref="template"/>
+	</beans:bean>
 	
 </beans:beans>
